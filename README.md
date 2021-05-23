@@ -10,14 +10,14 @@
 FINISHED: wrote a script that creates the tables for our database.
 IN PROGRESS: working on the server and client.
 ### Brent
-FINISHED:
-IN PROGRESS:
+FINISHED: 
+IN PROGRESS: 
 ### Brendan
-FINISHED:
-IN PROGRESS:
-### Nic
-FINISHED:
-IN PROGRESS:
+FINISHED: 
+IN PROGRESS: 
+### Nic 
+FINISHED: 
+IN PROGRESS: 
 ### Sabi
-FINISHED:
-IN PROGRESS:
+FINISHED: 
+IN PROGRESS: 
