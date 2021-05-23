@@ -7,17 +7,17 @@
 6. create a client that tells server to do CRUD commands, queries, ext.
 ## Who has done what and what they are currently working on.
 ### Michael
-FINISHED: wrote a script that creates the tables for our database.
-IN PROGRESS: working on the server and client.
+FINISHED: wrote a script that creates the tables for our database.  
+IN PROGRESS: working on the server and client.  
 ### Brent
-FINISHED: 
-IN PROGRESS: 
-### Brendan
-FINISHED: 
-IN PROGRESS: 
+FINISHED:  
+IN PROGRESS:  
+### Brendan  
+FINISHED:   
+IN PROGRESS:   
 ### Nic 
-FINISHED: 
-IN PROGRESS: 
+FINISHED:   
+IN PROGRESS:   
 ### Sabi
-FINISHED: 
-IN PROGRESS: 
+FINISHED:   
+IN PROGRESS:   
