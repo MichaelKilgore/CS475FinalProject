@@ -1,0 +1,129 @@
+SELECT current_database();
+
+CREATE DATABASE quicknhealthy;
+\c quicknhealthy
+
+SELECT current_database();
+
+CREATE TABLE DriverStatus (
+	ID				INTEGER			not null,
+	Description		VARCHAR (30)	not null,
+	
+	Primary Key	(ID)
+);
+
+CREATE TABLE Driver (
+	ID				SERIAL			not null,
+	FirstName		VARCHAR (20)	not null,
+	LastName		VARCHAR (20)	not null,
+	StatusID		INTEGER			not null,
+	
+	Primary Key	(ID),
+	Foreign Key (StatusID) references DriverStatus(ID)
+	Deferrable Initially Deferred
+);
+
+CREATE TABLE Vehicle (
+	PlateNumber		VARCHAR (10)	not null unique,
+	Type			VARCHAR (15)	not null,
+	Size			VARCHAR (8)		not null,
+	Capacity		INTEGER			not null,
+	Location		VARCHAR (20)	not null,
+
+	Primary Key (PlateNumber)
+); 
+
+CREATE TABLE Shipment (
+	ID				SERIAL			not null,
+	TicketNumber	INTEGER			not null unique,
+	DriverID		INTEGER			not null,
+	VPlateNumber	VARCHAR (10)	not null,
+
+	Primary Key (ID),
+	Foreign Key (DriverID) references Driver(ID)
+	Deferrable Initially Deferred,
+	Foreign Key (VPlateNumber) references Vehicle(PlateNumber)
+	Deferrable Initially Deferred
+);
+
+CREATE TABLE PackageStatus (
+	Type			CHAR			not null,
+	Description		VARCHAR (20)	not null,
+	
+	Primary Key (Type)
+);
+
+CREATE TABLE WarehouseLocation (
+	LocalID			VARCHAR (10)	not null,
+	Address			VARCHAR (20)	not null,
+	Description		VARCHAR (20)	not null,
+
+	Primary Key (LocalID)
+);
+
+CREATE Table ProteinType (
+	Type			CHAR			not null,
+	Description		VARCHAR (10)	not null,
+
+	Primary Key (Type)
+);
+
+CREATE TABLE Catalogue (
+	MealID			SERIAL				not null,
+	Weight			INTEGER				not null,
+	IsVegetarian	BOOLEAN				not null,
+	IsVegan			BOOLEAN				not null,
+	IsGlutenFree	BOOLEAN				not null,
+	ProteinType		CHAR				not null,
+	IsForSale		BOOLEAN				not null,
+	Description		VARCHAR (20)		not null,
+	Cost			DOUBLE PRECISION	not null,
+
+	Primary Key (MealID),
+	Foreign Key (ProteinType) references ProteinType(Type)
+	Deferrable Initially Deferred
+);
+
+CREATE TABLE Package (
+	ID						SERIAL			not null,
+	Address					VARCHAR (50)	not null,
+	Barcode					VARCHAR (200)	not null,
+	ShipmentID				INTEGER			not null,
+	IsPriority				BOOLEAN			not null,
+	Warehouse				VARCHAR (10)	not null,
+	DeliveryCompleteDate	TIMESTAMP		,
+	OrderedDate				TIMESTAMP		not null,
+	PackStatus				CHAR			not null,
+	
+	Primary Key (ID),
+	Foreign Key (ShipmentID) references Shipment(ID)
+	Deferrable Initially Deferred,
+	Foreign Key (Warehouse) references WarehouseLocation(LocalID)
+	Deferrable Initially Deferred,
+	Foreign Key (PackStatus) references PackageStatus(Type)
+);
+
+CREATE TABLE MealOrdered (
+    OrderID         INTEGER         not null,
+    MealID          INTEGER         not null,
+    NumberOfOrders  INTEGER         not null,
+
+    Primary Key (OrderID),
+    Foreign Key (OrderID) references Package(ID)
+    Deferrable Initially Deferred,
+    Foreign Key (MealID) references Catalogue(MealID)
+    Deferrable Initially Deferred
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
