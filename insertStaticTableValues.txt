@@ -1,0 +1,16 @@
+-- Insert Protein Types
+INSERT INTO ProteinType (Type, Description)
+VALUES ('c', 'chicken'), ('b', 'beef'), ('t', 'turkey'), ('f', 'fish');
+
+-- Insert Warehouse Location
+INSERT INTO WareHouseLocation (LocalID, Address, Description)
+VALUES (1, '4545 West Ave', 'Main base');
+
+-- Insert Package Statuses
+INSERT INTO PackageStatus (Type, Description)
+VALUES ('w', 'At Warehouse'), ('t', 'In Transit'), ('d', 'Delivered');
+
+-- Insert Driver Statuses
+INSERT INTO DriverStatus (Description)
+VALUES ('i', 'Idle'), ('m', 'midDelivery'), ('o', 'offDuty');
+

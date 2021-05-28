@@ -6,7 +6,7 @@ CREATE DATABASE quicknhealthy;
 SELECT current_database();
 
 CREATE TABLE DriverStatus (
-	ID				INTEGER			not null,
+	ID				CHAR			not null,
 	Description		VARCHAR (30)	not null,
 	
 	Primary Key	(ID)
@@ -14,9 +14,10 @@ CREATE TABLE DriverStatus (
 
 CREATE TABLE Driver (
 	ID				SERIAL			not null,
+	EmployeeID		INTEGER			not null unique,
 	FirstName		VARCHAR (20)	not null,
 	LastName		VARCHAR (20)	not null,
-	StatusID		INTEGER			not null,
+	StatusID		CHAR			not null,
 	
 	Primary Key	(ID),
 	Foreign Key (StatusID) references DriverStatus(ID)
