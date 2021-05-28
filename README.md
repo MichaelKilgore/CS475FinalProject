@@ -8,7 +8,7 @@
 ## Who has done what and what they are currently working on.
 ### Michael
 FINISHED: wrote a script that creates the tables for our database.  
-IN PROGRESS: working on the server and client.  
+IN PROGRESS: working on the server and client. Also working on making Prepare statements.
 ### Brent
 FINISHED:  
 IN PROGRESS:  
