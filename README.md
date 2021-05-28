@@ -8,7 +8,11 @@
 ## Who has done what and what they are currently working on.
 ### Michael
 FINISHED: wrote a script that creates the tables for our database.  
-IN PROGRESS: working on the server and client. Also working on making Prepare statements.
+          uploaded updated schema.  
+          added a insertStaticValues.txt which inserts values into the ProteinType, DriverStatus, and Warehouse location.
+          added a createPrepareStatements.txt file which makes a couple prepare statements. Not all the prepare statements we will need to make yet, but this is still in progress.
+          added baseline code for a server, but its not done yet.
+IN PROGRESS: working on the server and client. Still working on prepare statements.
 ### Brent
 FINISHED:  
 IN PROGRESS:  
@@ -21,3 +25,9 @@ IN PROGRESS:
 ### Sabi
 FINISHED:   
 IN PROGRESS:   
+## NOTES/UPDATES
+I changed a couple things in our schema. I added a public employeeID for employees. I also changed totalCost in mealOrdered to NumberOfOrders because we don't need a totalCost because it can be calculated with a query, also our previous schema had no way of added multiple of one meal to an order, so that fixed that problem.  
+## Thoughts that will need to be addressed eventually
+How are we going to generate the ticket numbers?
+
+
