@@ -15,6 +15,7 @@ FINISHED: wrote a script that creates the tables for our database.
 IN PROGRESS: working on the server and client. Still working on prepare statements.
 ### Brent
 FINISHED:  Pull
+
 IN PROGRESS:  
 ### Brendan  
 FINISHED:   
