@@ -1,33 +1,68 @@
 -- INSERT NEW DRIVER PREPARE STATEMENT.
 -- (FirstName, LastName, StatusID)
-PREPARE InsertDriver(text, text, int)
+PREPARE InsertDriver(text, text, int) AS
 INSERT INTO Driver (FirstName, LastName, StatusID)
 VALUES ($1, $2, $3);
 
--- DELETE DRIVER PREPARE STATEMENT.
+-- DELETE DRIVER BY EMPLOYEEID
 -- (EmployeeID)
-PREPARE DeleteDriver(int)
+PREPARE DeleteDriver(int) AS
 DELETE FROM Driver
 WHERE EmployeeID = $1;
 
+-- INSERT NEW SHIPMENT PREPARE STATEMENT.
+-- (TicketNumber, DriverID, VPlateNumber)
+PREPARE InsertShipment(int, int, text)
+INSERT INTO Shipment(TicketNumber, DriverID, VPlateNumber)
+VALUES($1, $2, $3);
+
+-- DELETE SHIPMENT BY TICKETNUMBER
+-- (TicketNumber)
+PREPARE DeleteShipment(int)
+DELETE FROM Shipment
+WHERE TicketNumber = $1;
+
 -- INSERT NEW VEHICLE PREPARE STATEMENT.
 -- (PlateNumber, Type, Size, Capacity, Location)
-PREPARE InsertVehicle(text, text, text, int, text)
+PREPARE InsertVehicle(text, text, text, int, text) AS
 INSERT INTO Vehicle (PlateNumber, Type, Size, Capacity, Location)
 VALUES ($1, $2, $3, $4, $5);
 
--- DELETE VEHICLE PREPARE STATEMENT.
+-- DELETE VEHICLE BY PLATENUMBER
 -- (PlateNumber)
-PREPARE DeleteVehicle(text)
+PREPARE DeleteVehicle(text) AS
 DELETE FROM Vehicle
 WHERE PlateNumber = $1;
 
+-- INSERT NEW PACKAGE PREPARE STATEMENT
+-- (Address, Barcode, ShipmentID, IsPriority, Warehouse, DeliveryCompleteDate, OrderedDate, PackStatus)
+PREPARE InsertPackage(text, text, int, boolean, text, timestamp, timestamp, char)
+INSERT INTO Package (Address, Barcode, ShipmentID, IsPriority, Warehouse, DeliveryCompleteDate, OrderedDate, PackStatus)
+VALUES ($1, $2, $3, $4, $5, $6, $7, $8);
+
+-- DELETE PACKAGE BY BARCODE
+-- (Barcode)
+PREPARE DeletePackage(text)
+DELETE FROM Package
+WHERE Barcode = $1;
+
+-- INSERT NEW MEALORDERED
+-- (OrderID, MealID, NumberOfOrders)
+PREPARE InsertMealOrdered(int, int, int)
+INSERT INTO MealOrdered(OrderID, MealID, NumberOfOrders)
+VALUES ($1, $2, $3);
+
+-- DELETE MEALORDERED BY ORDERID
+-- (OrderID)
+PREPARE DeleteMealOrdered(int)
+DELETE FROM MealOrdered
+WHERE OrderID = $1;
+
 -- INSERT NEW CATALOGUE
 -- (Weight, IsVegetarian, IsVegan, IsGlutenFree, ProteinType, IsForSale, Description, Cost)
-PREPARE InsertCatalogue(int, bool, bool, bool, char, bool, text, double)
+PREPARE InsertCatalogue(int, bool, bool, bool, char, bool, text, double precision) AS
 INSERT INTO Catalogue(Weight, IsVegetarian, IsVegan, IsGlutenFree, ProteinType, IsForSale, Description, Cost)
 VALUES($1, $2, $3, $4, $5, $6, $7, $8);
 
 
--- (Address, Barcode, ShipmentID, IsPriority, Warehouse, DeliveryCompleteDate, OrderedDate, Packstatus)
--- PREPARE insertPackage( text, text, int, bool, text, timestamp, timestamp, char) 
+

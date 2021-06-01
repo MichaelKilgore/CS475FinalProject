@@ -77,7 +77,7 @@ CREATE TABLE Catalogue (
 	IsGlutenFree	BOOLEAN				not null,
 	ProteinType		CHAR				not null,
 	IsForSale		BOOLEAN				not null,
-	Description		VARCHAR (20)		not null,
+	Description		VARCHAR (20)		not null unique,
 	Cost			DOUBLE PRECISION	not null,
 
 	Primary Key (MealID),
@@ -88,6 +88,8 @@ CREATE TABLE Catalogue (
 CREATE TABLE Package (
 	ID						SERIAL			not null,
 	Address					VARCHAR (50)	not null,
+	Username				VARCHAR (50)	not null,
+	OrderNumber				INTEGER			not null,
 	Barcode					VARCHAR (200)	not null,
 	ShipmentID				INTEGER			not null,
 	IsPriority				BOOLEAN			not null,

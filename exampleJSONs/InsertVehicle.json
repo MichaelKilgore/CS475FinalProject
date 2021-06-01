@@ -1,0 +1,8 @@
+{
+    "request" : "InsertVehicle",
+    "PlateNumber" : "JGY6201",
+    "Type" : "Van",
+    "Size" : "Large",
+    "Capacity" : "200",
+	"Location" : "Seattle, Wa"
+}

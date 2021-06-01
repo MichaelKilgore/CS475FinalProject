@@ -8,9 +8,10 @@ VALUES (1, '4545 West Ave', 'Main base');
 
 -- Insert Package Statuses
 INSERT INTO PackageStatus (Type, Description)
-VALUES ('w', 'At Warehouse'), ('t', 'In Transit'), ('d', 'Delivered');
+VALUES ('w', 'At Warehouse awaiting delivery.'), ('t', 'In Transit'), ('d', 'Delivered'), ('o', 'Order not yet made'), ('c', 'Order was cancelled');;
 
 -- Insert Driver Statuses
-INSERT INTO DriverStatus (Description)
+INSERT INTO DriverStatus (ID, Description)
 VALUES ('i', 'Idle'), ('m', 'midDelivery'), ('o', 'offDuty');
+
 
