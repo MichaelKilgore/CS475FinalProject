@@ -11,10 +11,10 @@ FINISHED: wrote a script that creates the tables for our database.
           uploaded updated schema.  
           added a insertStaticValues.txt which inserts values into the ProteinType, DriverStatus, and Warehouse location.
           added a createPrepareStatements.txt file which makes a couple prepare statements. Not all the prepare statements we will need to make yet, but this is still in progress.
-          added baseline code for a server, but its not done yet.
+          added baseline code for a server, but its not done yet.  
 IN PROGRESS: working on the server and client. Still working on prepare statements.
 ### Brent
-FINISHED: pull
+FINISHED: pull  
 IN PROGRESS:  
 ### Brendan  
 FINISHED:   
