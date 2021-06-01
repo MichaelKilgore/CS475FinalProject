@@ -18,7 +18,7 @@ FINISHED: pull
 IN PROGRESS:  
 ### Brendan  
 FINISHED:   
-IN PROGRESS:   
+IN PROGRESS: Making the python scripts that will execute the prepared statements for inserting a new driver and deleting a driver.  
 ### Nic 
 FINISHED:   
 IN PROGRESS:   
