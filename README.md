@@ -17,8 +17,8 @@ IN PROGRESS: working on the server and client. Still working on prepare statemen
 FINISHED: pull  
 IN PROGRESS:  
 ### Brendan  
-FINISHED:   
-IN PROGRESS: Making the python scripts that will execute the prepared statements for inserting a new driver and deleting a driver.  
+FINISHED: Made setupDB which combines some of the previous files for creating the DB and adds some test values into the non-domain tables. Made testTables python script, which outputs all the data in a table based on terminal input. Made a few minor changes to the schema: sized up Description in PackageStatuse to Varchar(50), added Name to Catalogue as a Varchar(20), changed the type of Desciption in Catalogue to Text, changed the name of NumberOfOrders in Meal Ordered to Quantity, added Eggs (e) and None (n) to ProteinType.
+IN PROGRESS:   
 ### Nic 
 FINISHED:   
 IN PROGRESS:   
