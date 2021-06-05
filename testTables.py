@@ -22,7 +22,7 @@ try:
         host = "127.0.0.1",
         database = "quicknhealthy",
         user = "postgres",
-        password = "Shpengall12",
+        password = "XXXXXXXXXX",
         port = "5432"
     )
 
