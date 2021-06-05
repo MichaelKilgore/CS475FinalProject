@@ -28,7 +28,7 @@ IN PROGRESS:
 FINISHED:   CancelPackage
 IN PROGRESS:
 ### Sabi
-FINISHED:   
+FINISHED:   Finished belows script and pushed 
 IN PROGRESS:   Making python scropts for Delete Vehicle, InsertMealOrdered, UpdatePackage, viewPackageStatus, insertVehicle,insertshipment, insertcataloge
 ## NOTES/UPDATES
 I changed a couple things in our schema. I added a public employeeID for employees. I also changed totalCost in mealOrdered to NumberOfOrders because we don't need a totalCost because it can be calculated with a query, also our previous schema had no way of added multiple of one meal to an order, so that fixed that problem.  
