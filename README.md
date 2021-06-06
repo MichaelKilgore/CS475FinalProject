@@ -30,7 +30,7 @@ IN PROGRESS:
 ### Sabi
 FINISHED:   Pushed deleteVehicle.py, InsertMealOrdered.py, UpdatePackage.py, viewPackageStatus.py, insertVehicle.py,insertshipment.py, and insertcataloge.py
 
-IN PROGRESS:   
+IN PROGRESS:   updateVehcileStatus, updateDriverStatus
 ## NOTES/UPDATES
 I changed a couple things in our schema. I added a public employeeID for employees. I also changed totalCost in mealOrdered to NumberOfOrders because we don't need a totalCost because it can be calculated with a query, also our previous schema had no way of added multiple of one meal to an order, so that fixed that problem.  
 ## Thoughts that will need to be addressed eventually
