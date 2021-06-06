@@ -1,0 +1,13 @@
+{
+    "request" : "InsertMeal",
+    "Weight" : "10",
+	"IsVegetarian" : "true",
+	"IsVegan" : "true",
+	"IsGlutenFree" : "true",
+	"ProteinType" : "b",
+	"IsForSale" : "true",
+	"Description" : "beefand",
+	"Cost" : "10.99"
+}
+
+

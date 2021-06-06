@@ -1,0 +1,9 @@
+{
+    "request" : "InsertVehicle",
+    "PlateNumber" : "JGY6221",
+    "Type" : "Van",
+    "Size" : "Large",
+    "Capacity" : "200",
+	"Location" : "Warehouse"
+}
+

@@ -1,0 +1,40 @@
+g++ -std=c++11 test.cpp -o test.o
+g++ -std=c++11 server.cpp -o server.o
+g++ -std=c++11 client.cpp -o client.o
+
+./client.o exampleJSONs/InsertMeal.json
+./server.o
+
+
+#rows = cur.fetchall()
+
+#for r in rows:
+#   print(r)
+
+update schema in presentation 						-> description is unique and varchar (50) 
+insert shipment code, add link to to packages.		->
+change retires to update statuses.
+view idle drivers 
+view idle vehicles
+change retiredriver to updatedriver 			-> sabi DONE
+change retirevehicle to updatevehicle			-> sabi DONE
+email professor on changes
+
+ALL API CALLS 14
+----------------------
+InsertDriver
+UpdateDriverStatus
+InsertVehicle
+UpdateVehicleStatus
+InsertMeal
+UpdateMealAvailability
+InsertPackage
+ViewPackageStatus
+UpdatePackageStatus
+ViewSales
+FilterViewSales
+ViewIdleDrivers
+ViewIdleVehicles
+InsertShipment
+---------------------
+

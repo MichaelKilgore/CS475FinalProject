@@ -1,0 +1,111 @@
+-- INSERT NEW DRIVER PREPARE STATEMENT.
+-- (EmployeeID, FirstName, LastName,  StatusID)
+PREPARE InsertDriver(int, text, text, char) AS
+INSERT INTO Driver (EmployeeID, FirstName, LastName, StatusID)
+VALUES ($1, $2, $3, $4);
+
+-- DELETE DRIVER BY EMPLOYEEID
+-- (EmployeeID)
+PREPARE DeleteDriver(int) AS
+DELETE FROM Driver
+WHERE EmployeeID = $1;
+
+-- INSERT NEW SHIPMENT PREPARE STATEMENT.
+-- (TicketNumber, DriverID, VPlateNumber)
+PREPARE InsertShipment(int, int, text) AS
+INSERT INTO Shipment (TicketNumber, DriverID, VPlateNumber)
+VALUES($1, $2, $3);
+
+-- DELETE SHIPMENT BY TICKETNUMBER
+-- (TicketNumber)
+PREPARE DeleteShipment(int) AS
+DELETE FROM Shipment
+WHERE TicketNumber = $1;
+
+-- INSERT NEW VEHICLE PREPARE STATEMENT.
+-- (PlateNumber, Type, Size, Capacity, Location)
+PREPARE InsertVehicle(text, text, text, int, text) AS
+INSERT INTO Vehicle (PlateNumber, Type, Size, Capacity, Location)
+VALUES ($1, $2, $3, $4, $5);
+
+-- DELETE VEHICLE BY PLATENUMBER
+-- (PlateNumber)
+PREPARE DeleteVehicle(text) AS
+DELETE FROM Vehicle
+WHERE PlateNumber = $1;
+
+-- INSERT NEW PACKAGE PREPARE STATEMENT
+-- (Address, Barcode, ShipmentID, IsPriority, Warehouse, DeliveryCompleteDate, OrderedDate, PackStatus)
+PREPARE InsertPackage(text, text, int, boolean, text, timestamp, timestamp, char) AS
+INSERT INTO Package (Address, Barcode, ShipmentID, IsPriority, Warehouse, DeliveryCompleteDate, OrderedDate, PackStatus)
+VALUES ($1, $2, $3, $4, $5, $6, $7, $8);
+
+-- DELETE PACKAGE BY BARCODE
+-- (Barcode)
+PREPARE DeletePackage(text) AS
+DELETE FROM Package
+WHERE Barcode = $1;
+
+-- INSERT NEW MEALORDERED
+-- (OrderID, MealID, NumberOfOrders)
+PREPARE InsertMealOrdered(int, int, int) AS
+INSERT INTO MealOrdered(OrderID, MealID, NumberOfOrders)
+VALUES ($1, $2, $3);
+
+-- DELETE MEALORDERED BY ORDERID
+-- (OrderID)
+PREPARE DeleteMealOrdered(int) AS
+DELETE FROM MealOrdered
+WHERE OrderID = $1;
+
+-- INSERT NEW CATALOGUE
+-- (Weight, IsVegetarian, IsVegan, IsGlutenFree, ProteinType, IsForSale, Description, Cost)
+PREPARE InsertCatalogue(int, bool, bool, bool, char, bool, text, double precision) AS
+INSERT INTO Catalogue(Weight, IsVegetarian, IsVegan, IsGlutenFree, ProteinType, IsForSale, Description, Cost)
+VALUES($1, $2, $3, $4, $5, $6, $7, $8);
+
+-- UPDATE MEAL AVAILABILITY
+-- (Description, IsForSale)
+PREPARE UpdateMealAvailability(text, bool) AS
+UPDATE Catalogue
+SET IsForSale = $2
+WHERE Description = $1;
+
+-- CANCEL PACKAGE
+-- (Username, OrderNumber)
+PREPARE CancelPackage(text, int) AS
+UPDATE Package
+SET PackStatus = 'c'
+WHERE Username = $1 AND OrderNumber = $2;
+
+-- VIEW PACKAGE STATUS
+-- (Username, OrderNumber)
+PREPARE ViewPackageStatus(text, int) AS
+SELECT Description
+FROM Package
+	JOIN PackageStatus ON (PackStatus = Type)
+WHERE Username = $1 AND OrderNumber = $2;
+
+-- UPDATE PACKAGE STATUS
+-- (Barcode, PackStatus)
+PREPARE UpdatePackageStatus(text, char) AS
+UPDATE Package
+SET PackStatus = $2 
+WHERE Barcode = $1;
+
+-- VIEW SALES
+--
+
+-- FILTER VIEW SALES
+-- CANNOT HAVE PREPARE STATEMENT 
+
+-- VIEW MEAL POPULARITY
+--
+PREPARE ViewMealPopularity(text) AS
+SELECT Description, count(*)
+FROM Catalogue
+GROUP BY Description
+HAVING Description = $1;
+
+
+

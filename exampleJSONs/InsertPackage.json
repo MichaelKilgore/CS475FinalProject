@@ -1,0 +1,18 @@
+{
+    "request" : "InsertPackage",
+    "Address" : "196th_PL_SW_5689",
+	"Username" : "mkilgore2000",
+	"OrderNumber" : "1",
+	"Barcode" : "ADFIEFNDOIHCOEIH",
+    "IsPriority" : "true",
+    "Meals" : [
+		{
+			"NumberOfOrders" : "1",
+			"Description" : "Burgers"
+		},
+		{
+			"NumberOfOrders" : "2",
+			"Description" : "PestoPizza"
+		}
+	]
+}

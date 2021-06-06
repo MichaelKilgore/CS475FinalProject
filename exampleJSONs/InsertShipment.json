@@ -1,0 +1,11 @@
+{
+	"request" : "InsertShipment",
+	"TicketNumber" : "13585104",
+	"EmployeeID" : "119885",
+	"PlateNumber" : "JGY6221",
+	"Barcodes" : [
+		"ADFIEFNDOIHCOEIH"
+	]
+}
+
+
