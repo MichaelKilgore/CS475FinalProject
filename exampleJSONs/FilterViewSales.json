@@ -1,8 +1,0 @@
-{
-    "request" : "ViewSales",
-    "IsForSale" : "NULL",
-	"Traits" : {
-		"Trait1" : "IsVegan",
-		"Trait2" : "Chicken"
-	}
-}
