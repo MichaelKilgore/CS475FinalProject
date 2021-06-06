@@ -97,8 +97,11 @@ cur.execute(query)
 
 rows = cur.fetchall()
 
-for r in rows:
-    print("Name: ", r[0], " | ", "Numsales: ", r[1])
+print("Name\tNumberOfSales")
+print('---------------------')
+print("\n")
+for row in rows:
+    print(row[0],"\t", row[1])
 
 #close cursor
 cur.close()

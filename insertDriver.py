@@ -27,9 +27,10 @@ command = command + args[3] + "\', \'" + args[4] + "\')"
 
 cur.execute(command)
 
+conn.commit()
 cur.execute("SELECT * FROM Driver")
 
-conn.commit()
+
 
 #close the connection
 cur.close()

@@ -29,8 +29,7 @@ record = (arg[1],arg[2],arg[3],arg[4],arg[5])
 
 cur.execute(insert_vehicle, record)
 conn.commit()
-count = cur.rowcount
-print(count, "Record inserted successfully into Vehicel Table.")
+cur.execute("SELECT * FROM Vehicle;")
 
 cur.close()
 conn.close()

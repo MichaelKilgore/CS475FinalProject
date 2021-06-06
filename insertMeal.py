@@ -22,7 +22,7 @@ except:
 # Obtain a cursor object from the PostgreSQL database connection
 
 cur     = conn.cursor()
-print("INSERT INTO Catalogue(Weight, IsVegetarian, IsVegan, IsGlutenFree, ProteinType, IsForSale, Description, Cost)")
+
 
 insert_meal_ordered = """ INSERT INTO MealOrdered (OrderID, MealID, NumberOfOrders)
                             VALUES(%s,%s,%s)"""
@@ -30,7 +30,9 @@ meal_record = (arg[1], arg[2], arg[3])
 
 
 cur.execute(insert_meal_ordered, meal_record)
+
 conn.commit()
+cur.execute("SELECT * FROM MealOrdered;")
 
 cur.close()
 conn.close()
